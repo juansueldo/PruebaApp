@@ -1,0 +1,38 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+img{
+  height: 250px;
+}
+.container h1{
+  font-weight: bolder;
+  float: left;
+  padding-left: 5px;
+
+  
+}
+.container p{
+  font-size: 12px;
+  float: left;
+  padding-left: 5px;
+}
+.ion-margin-vertical{
+  width: 90%;
+  text-transform: capitalize;
+}
+@media (min-width: 560px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ion-margin-vertical{
+    width: 450px;
+  }
+  
+}

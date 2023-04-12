@@ -1,0 +1,16 @@
+<app-header color="warning" title="Home"></app-header>
+<ion-content class="background">
+  <div class="container content">
+    <img src="../../assets/beerBackGround-removebg2.png"/>
+    <h1>Bienvenido a la app</h1>
+    <p>Presione <strong>login </strong> si ya esta registrado, sino presione en <strong>signup </strong> para registrarse</p>
+    <ion-button color="dark" routerLink="/auth" class="ion-margin-vertical text-color" shape="round">
+      Log in
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+    <ion-button fill="outline" color="dark" routerLink="sign-up" class="ion-margin-vertical" shape="round">
+      Sign up
+      <ion-icon slot="end" name="person-add-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
