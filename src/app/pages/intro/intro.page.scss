@@ -1,6 +1,27 @@
 .container{
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+}
+.container h2{
+    color: #000;
+    font-weight: 600;
+    
+}
+.container h1{
+    font-weight: 900;
+    background: -webkit-linear-gradient(#dfd009,#df9409, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.alumn{
+    position: absolute;
+    top: 0;
+}
+.division{
+    position: absolute;
+    bottom: 0;
 }

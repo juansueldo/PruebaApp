@@ -15,15 +15,18 @@ export class FirebaseService {
 
   //======= Autenticacion ========
   login(user: User){
-    return this.auth.signInWithEmailAndPassword(user.email,user.email)
+    return this.auth.signInWithEmailAndPassword(user.email,user.password)
   }
 
   signinUp(user: User){
-    return this.auth.createUserWithEmailAndPassword(user.email,user.email)
+    return this.auth.createUserWithEmailAndPassword(user.email,user.password)
   }
 
   updateUser(user: any){
     const auth = getAuth();
     return updateProfile(auth.currentUser, user)
+  }
+  logout(){
+    return this.auth.signOut();
   }
 }

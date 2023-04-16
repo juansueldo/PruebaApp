@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() { }
+  constructor(
+    private platform: Platform
+  ) { 
+
+    this.platform.backButton.subscribeWithPriority(9999, () => {
+      navigator['app'].exitApp();
+    });
+  }
 
 
 

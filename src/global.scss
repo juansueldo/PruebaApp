@@ -24,19 +24,22 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Righteous&family=Roboto:wght@100;300;400;500&display=swap');
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 ion-content{
     --background: var(--ion-color-light);
     --color: var(--ion-color-light-contrast);
 }
-
+h1{
+    font-family: 'Righteous', cursive;
+}
 .content{
     background: var(--ion-color-light);
     color: var(--ion-color-light-contrast);
+    height: 100%;
 }
 
 ion-item{
@@ -51,9 +54,19 @@ ion-item{
 }
 ion-button{
     text-transform: capitalize;
+    z-index: 90;
 }
-.d-flex-center{
+
+.buttons-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 99;
+}
+svg{
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
 }

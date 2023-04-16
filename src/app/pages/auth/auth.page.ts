@@ -7,6 +7,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { CustomValidators } from 'src/app/utils/custom-validators';
 import { User } from 'src/app/models/user.model';
 import { UtilsService } from 'src/app/services/utils.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class AuthPage implements OnInit {
     
   constructor(
     private firebaseSvc: FirebaseService,
-    private utilsSvc: UtilsService
+    private utilsSvc: UtilsService,
+    private route: Router
   ) { }
 
   ngOnInit() {
@@ -41,19 +43,21 @@ export class AuthPage implements OnInit {
         }
         this.utilsSvc.setElementInLocalstorage('user',user)
         this.utilsSvc.routerLink('/tab')
+        this.route.navigate(['/tab'], { queryParams: user });
+        
         
         this.utilsSvc.dismissLoading();
         this.utilsSvc.presentToast({
           message: `Te damos la bienvenida ${user.name}`,
           duration: 3500,
-          color: 'primary',
+          color: 'warning',
           icon: 'person-outline'
         })
 
         this.form.reset();
       }, error =>{
         this.utilsSvc.presentToast({
-          message: 'Error',
+          message: 'Usuario y/o contraseña inválida',
           duration: 5500,
           color: 'warning',
           icon: 'alert-circle-outline'

@@ -20,7 +20,7 @@ export class SignUpPage implements OnInit {
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     confirmPassword: new FormControl(''),
   });
 
@@ -44,7 +44,6 @@ export class SignUpPage implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      //console.log(this.form.value);
       this.utilsSvc.presentLoading({message: 'Registrando'})
       this.firebaseSvc.signinUp(this.form.value as User).then(async res =>{
 
@@ -56,20 +55,20 @@ export class SignUpPage implements OnInit {
           email: res.user.email
         }
         this.utilsSvc.setElementInLocalstorage('user',user)
-        this.utilsSvc.routerLink('/tab')
+        this.utilsSvc.routerLink('/auth')
         
         this.utilsSvc.dismissLoading();
         this.utilsSvc.presentToast({
-          message: `Te damos la bienvenida ${user.name}`,
+          message: `Te registraste con exito ${user.name}`,
           duration: 3500,
-          color: 'primary',
+          color: 'warning',
           icon: 'person-outline'
         })
 
         this.form.reset();
       }, error =>{
         this.utilsSvc.presentToast({
-          message: 'Error',
+          message: 'Error usuario invalido',
           duration: 5500,
           color: 'warning',
           icon: 'alert-circle-outline'

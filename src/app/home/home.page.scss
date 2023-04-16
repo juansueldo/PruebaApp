@@ -13,12 +13,17 @@ img{
   float: left;
   padding-left: 5px;
 
-  
+}
+span{
+  background: -webkit-linear-gradient(#dfd009,#df9409, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .container p{
   font-size: 12px;
   float: left;
   padding-left: 5px;
+  text-shadow: 1px 1px 2px black;
 }
 .ion-margin-vertical{
   width: 90%;

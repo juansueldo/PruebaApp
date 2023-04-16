@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  img{
+    height: 250px;
+  }
+  .container h1{
+    font-weight: bolder;
+    float: left;
+    padding-left: 5px;
+  
+  }
+  span{
+    background: linear-gradient(rgb(138, 76, 19),#fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: capitalize;  
+  }
+  
+  
